@@ -8,8 +8,29 @@ Warning
 Use some sort of looping. Do Not use Array.prototype.filter()
 */
 
-const conditionalSum = function(values, condition) {
+const conditionalSum = (values, condition) => {
     // Your code here
+    let evenArr = []
+    let oddArr = []
+
+    for(let i=0; i<=values.length-1; i++){
+      if (values[i] % 2 == 0){
+        evenArr.push(values[i]);
+      } else {
+        oddArr.push(values[i]);
+      }
+    }
+
+    if (condition == "even"){
+      let resultEven =  evenArr.reduce((total, x) => total += x, 0);
+      return resultEven
+    } else {
+      let resultOdd =  oddArr.reduce((total, x) => total += x, 0);
+      return resultOdd
+    }
+
+
+
   };
   
 console.log(conditionalSum([1, 2, 3, 4, 5], "even")); // 6
