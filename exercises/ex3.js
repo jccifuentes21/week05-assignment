@@ -12,7 +12,7 @@ const numberOfVowels = (data) => {
     let dataArr = data.split("");
     let vowels = 0;
 
-    for (let i=0; i<=dataArr.length-1; i++){
+    for (let i=0; i<dataArr.length; i++){
       if(dataArr[i] == "a" || dataArr[i] =="e" || dataArr[i] == "i" || dataArr[i] == "o" || dataArr[i] == "u"){
         vowels += 1;
       }

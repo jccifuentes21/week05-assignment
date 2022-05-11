@@ -33,9 +33,8 @@ const whereCanIPark = function (spots, vehicle) {
     vehicleSize = "M"
   }
 
-  for(let i=0; i<=spots.length-1; i++){
-    for(let j=0; j<=spots[i].length-1; j++){
-      let spaceSize = spots[i][j]
+  for(let i=0; i<spots.length; i++){
+    for(let j=0; j<spots[i].length; j++){
 
       if (spots[i][j] == "S" || spots[i][j] == "M" || spots[i][j] == "R"){
         let space = {x : i, y : j, size: spots[i][j]}

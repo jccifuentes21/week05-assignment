@@ -13,7 +13,7 @@ const conditionalSum = (values, condition) => {
     let evenArr = []
     let oddArr = []
 
-    for(let i=0; i<=values.length-1; i++){
+    for(let i=0; i<values.length; i++){
       if (values[i] % 2 == 0){
         evenArr.push(values[i]);
       } else {

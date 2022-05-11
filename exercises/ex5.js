@@ -22,7 +22,7 @@ const urlEncode = function(text) {
     let splitText = trimmedText.split("");
     let textResultArr = [];
 
-    for (let i=0; i<=splitText.length-1; i++){
+    for (let i=0; i<splitText.length; i++){
       if (splitText[i] == " "){
         textResultArr[i] = "%20";
       } else {
