@@ -16,7 +16,7 @@ Warning
 Use some sort of looping. Do Not use String.prototype.replace
 */
 
-const urlEncode = function(text) {
+const urlEncode = (text) => {
     // Put your solution here
     let trimmedText = text.trim();
     let splitText = trimmedText.split("");

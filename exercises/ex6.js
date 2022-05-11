@@ -19,7 +19,7 @@ Note
 Note: There may be multiple available spots for a particular vehicle. It does not matter which spot your function chooses, as long as the spot is available. And if there are no available spots, remember to return false.
 */
 
-const whereCanIPark = function (spots, vehicle) {
+const whereCanIPark = (spots, vehicle) => {
   // Code here!
   let freeSpaces = [];
   let vehicleSize;
