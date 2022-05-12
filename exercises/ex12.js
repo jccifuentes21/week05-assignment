@@ -19,9 +19,40 @@ Note
 This one is a doozy! We might want to start by creating a helper function called ingredientCheck() that will take in one bakery at a time, along with the recipes.ingredients array to check if the given bakery possesses any of the ingredients from that recipe.
 
 */
+const ingredientCheck = (bakery, recipes) =>{
+
+    let recipesFound = [];
+
+    recipes.map((recipe, index) =>{
+        recipe.ingredients.map(ingredient =>{
+            bakery.map(bakeIngredient =>{
+                if (bakeIngredient == ingredient){
+                  recipesFound.push(recipes[index])
+                }
+            })
+        })
+    })
+
+    return recipesFound;
+
+}
+
 
 const chooseRecipe = function(bakeryA, bakeryB, recipes) {
-  // Code here!
+  // Code here! 
+  let recipesA = ingredientCheck(bakeryA, recipes);
+  let recipesB = ingredientCheck(bakeryB, recipes);
+  let finalRecipe = "";
+
+  recipesA.map(recipeA =>{
+      recipesB.map(recipeB =>{
+          if (recipeA.name == recipeB.name){
+            finalRecipe = recipeA.name
+          }
+      })
+  })
+
+  return finalRecipe
 }
 
 let bakeryA = ['saffron', 'eggs', 'tomato paste', 'coconut', 'custard'];

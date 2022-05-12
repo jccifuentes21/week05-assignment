@@ -24,6 +24,37 @@ Penny (1¢)
 
 const calculateChange = function(total, cash) {
   // Your code here
+  let result = "{ ";
+  let division = 0;
+  const money = [
+    {name: "twentyDollars", value: 2000}, 
+    {name: "tenDollars", value: 1000}, 
+    {name: "fiveDollars", value: 500}, 
+    {name: "twoDollars", value: 200}, 
+    {name: "oneDollar", value: 100}, 
+    {name: "quarter", value: 25}, 
+    {name: "dime", value: 10}, 
+    {name: "nickel", value: 5}, 
+    {name: "penny", value: 1}, 
+  ]
+
+  let change = cash - total;
+
+  money.map(element =>{
+    if (change >= element.value){
+      // console.log(`${change} over ${element.value} is ${change/element.value}`)
+      division = Math.floor(change/element.value)
+      result += `${element.name}: ${division}`
+      change = change % element.value
+      if(element.name != "penny"){
+        result += ", "
+      }
+    }
+
+  })
+
+  result += " }"
+  return result
 };
 
 console.log(calculateChange(1787, 2000)); // { twoDollar: 1, dime: 1, penny: 3 }

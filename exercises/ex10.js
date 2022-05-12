@@ -6,10 +6,29 @@ We will be given a number as our input data. This number is the highest value of
 Instruction
 Create a function named multiplicationTable that receives a number maxValue as input and creates a square multiplication table where maxValue is the largest value in the table.
 */
-
-Input
-const multiplicationTable = function(maxValue) {
+const multiplicationTable = (maxValue) => {
   // Your code here
+  let resultArr = new Array(maxValue);
+  for( let i=0; i<maxValue; i++){
+    resultArr[i] = new Array(maxValue)
+  }
+
+  for(let i=0; i<maxValue; i++){
+    for (let j=0; j<maxValue; j++){
+      resultArr[i][j] = (i+1) * (j+1);
+    }
+  }
+
+  let resultString = "";
+  resultArr.map(outer =>{
+    outer.map(inner =>{
+      resultString += `${inner} `
+    })
+    resultString += "\n"
+  })
+
+  return resultString
+
 };
 
 console.log(multiplicationTable(1));
