@@ -10,6 +10,24 @@ Create a function named organizeInstructors that will receive an array of instru
 
 const organizeInstructors = function(instructors) {
   // Put your solution here
+  let result = {};
+  let courseName = "";
+  let courseInstructor = "";
+
+  instructors.map((element, index) =>{
+    courseName = element.course;
+    courseInstructor = element.name;
+
+    if(!(courseName in result)){
+      result[courseName] = new Array();
+      result[courseName].push(courseInstructor)
+    } else {
+      result[courseName].push(courseInstructor)
+    }
+
+  })
+  return result;
+
 };
 
 console.log(organizeInstructors([
